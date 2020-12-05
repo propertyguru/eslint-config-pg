@@ -5,7 +5,7 @@ Recommended ESLint and Prettier for typescript codebase project in PropertyGuru
 ## Setup
 1. install package with your preferred package manager
 ``` 
-npm install --dev eslint-config-pg
+npm install --save-dev eslint-config-pg
 ```
 **OR**
 
