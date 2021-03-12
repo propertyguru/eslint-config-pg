@@ -10,7 +10,6 @@ module.exports = {
       'plugin:@typescript-eslint/eslint-recommended',
       'plugin:@typescript-eslint/recommended',
       'prettier',
-      'prettier/@typescript-eslint',
       "plugin:functional/external-recommended",
       "plugin:functional/no-mutations"
     ],
@@ -285,4 +284,3 @@ module.exports = {
       "yoda": "error",
     },
   };
-  
