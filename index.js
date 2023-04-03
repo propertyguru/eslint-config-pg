@@ -1,2 +1,6 @@
-const eslintrc = require('./.eslintrc.js');
-module.exports = eslintrc;
+// How to use?
+// {
+//   "extends": "pg",
+// }
+
+module.exports = require('./configs/typescript')
