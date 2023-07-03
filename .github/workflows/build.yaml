@@ -1,0 +1,29 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  build:
+    name: PR Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set Environment Variables
+        uses: ./.github/actions/setvars
+        with:
+          varFilePath: ./.github/variables/node.env
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Running the linter
+        run: |
+          npm ci
+          npm run eslint
