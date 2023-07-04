@@ -1,6 +1,6 @@
 # ESLint and Prettier config
 
-Recommended ESLint and Prettier for typescript codebase project in PropertyGuru
+Recommended ESLint and Prettier for typescript and React.js codebase project in PropertyGuru.
 
 **Table of Contents**
 
@@ -8,33 +8,28 @@ Recommended ESLint and Prettier for typescript codebase project in PropertyGuru
   - [Setup](#setup)
   - [Note](#note)
 - [Documents](#documents)
-- [TODO](#todo)
 
 ## Setup
 
 1. Install package with your preferred package manager.
 
     ```bash
-    npm install -D @propertyguru/eslint-config-pg
+    npm install -D @propertyguru/eslint-config-pg husky lint-staged
     # Or
-    yarn add --dev @propertyguru/eslint-config-pg
-    # Or
-    pnpm install --dev @propertyguru/eslint-config-pg
+    yarn add --dev @propertyguru/eslint-config-pg husky lint-staged
     ```
 
-2. Create or modify .eslintrc.js file with following content.
+    Note: I recommend to use latest version of NPM to make sure peerDependencies will install properly. In Yarn on classic version might have issues so you might need to check on Step 6.
+
+2. Create or modify `.eslintrc.json` file with following content.
 
     ```
     {
-      'extends': [
-        'pg'
+      "extends": [
+        "@propertyguru/pg"
       ]
     }
     ```
-
-    You can change `pg` to be another explicit configs. Here is available configs.
-    - `pg/configs/typescript` For TypeScript files only. This is default of `pg`.
-    - `pg/configs/react-typescript` For React with TypeScript files.
 
 3. Create Prettier config by copy [.prettierrc.json](./.prettierrc.json) file from this repository into root of your repository. You can change value as you need. More options is [here](https://prettier.io/docs/en/options.html).
 
@@ -50,7 +45,7 @@ Recommended ESLint and Prettier for typescript codebase project in PropertyGuru
     git add .husky/pre-commit
     ```
 
-5. \[Optional\] Run these command to add script commands to your project. You can change path of `./src` to be another path. It's up to you.
+5. Run these command to add script commands to your project. You can change path of `./src` to be another path. It's up to you.
 
     ```bash
     npm pkg set scripts.eslint="eslint ./src --ext .js,.jsx,.ts,.tsx"
@@ -64,18 +59,14 @@ Recommended ESLint and Prettier for typescript codebase project in PropertyGuru
     - `npm run lint` or `yarn lint` when PR checking process happen or before you commit.
     - `npm run fix` or `yarn fix` on local machine to make sure everythings is clean.
 
+6. If you found you can't run `npm run lint` with error about peerDependencies. Please run `npm info "@propertyguru/eslint-config-pg" peerDependencies` to check requires peerDependencies and add in your project manually.
+
 ## Note
 
-1. We recommend to use NPM v7 or newer because it can install peer dependencies automatically or you can use Yarn as well.
-2. You can test eslint configs in this repo by running `npm run print:eslint:config` to see full config from ESLint.
-3. For previous users. You still can access previous major version from [here](https://github.com/propertyguru/eslint-config-pg/tree/v1.0.3).
+1. You can test eslint configs in this repo by running `npm run print:eslint:config` to see full config from ESLint.
+2. For previous users. You still can access previous major version from [here](https://github.com/propertyguru/eslint-config-pg/tree/v1.0.3).
+3. Please don't add another packages that have Eslint style only like Airbnb. We try to reduce dependency as much as we can.
 
 # Documents
 
 - [FAQ](./docs/FAQ.md)
-
-# TODO
-
-- Migrate rules from [previous versions](https://github.com/propertyguru/eslint-config-pg/tree/v1.0.3) to new rule config.
-  - eslint-plugin-functional
-  - eslint-plugin-import

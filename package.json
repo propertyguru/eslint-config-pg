@@ -6,13 +6,18 @@
   "engines": {
     "node": "^18"
   },
+  "files": [
+    ".eslintrc.cjs",
+    "index.js",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier ./src --check",
     "lint": "npm run eslint && npm run prettier",
     "fix": "npm run eslint -- --fix && npm run prettier -- --write",
-    "print:eslint:config": "eslint --print-config src/javascript/common.js > './.eslintrc.js_fullsettings.js'",
+    "print:eslint:config": "eslint --print-config ./src > './.eslintrc.js_fullsettings.js'",
     "prepare": "husky install"
   },
   "repository": {
@@ -30,32 +35,79 @@
     "url": "https://github.com/propertyguru/eslint-config-pg/issues"
   },
   "homepage": "https://github.com/propertyguru/eslint-config-pg#readme",
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "@typescript-eslint/parser": "^5.60.1",
-    "eslint": "^8.44.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-functional": "^5.0.8",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.8"
+  "publishConfig": {
+    "directory": "lib",
+    "@propertyguru:registry": "https://npm.pkg.github.com/propertyguru"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-functional": "^5.0.8",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "prettier": "^2.8.8",
     "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8"
   },
   "overrides": {
     "semver": "^7.5.3"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": true
+        }
+      ],
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "successComment": false,
+          "failComment": false
+        }
+      ],
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "echo ::set-output name=nextVer::${nextRelease.version}"
+        }
+      ]
+    ]
   }
 }

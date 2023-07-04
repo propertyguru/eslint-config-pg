@@ -6,6 +6,7 @@ var test = 1
 
 // eslint-disable-next-line prefer-const
 let a = 3
+// eslint-disable-next-line no-console
 console.log(a)
 
 // Prettier should handle trailing comma automatically.

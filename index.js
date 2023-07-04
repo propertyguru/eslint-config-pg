@@ -1,6 +1,6 @@
 // How to use?
 // {
-//   "extends": "pg",
+//   "extends": "@propertyguru/pg",
 // }
 
-module.exports = require('./configs/typescript')
+module.exports = require('./.eslintrc.cjs')
