@@ -9,10 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "prettier": "prettier ./ --check",
+    "prettier": "prettier ./src --check",
     "lint": "npm run eslint && npm run prettier",
     "fix": "npm run eslint -- --fix && npm run prettier -- --write",
-    "print:eslint:config": "eslint --print-config src/javascript/common.js > './.eslintrc.js_fullsettings.js'"
+    "print:eslint:config": "eslint --print-config src/javascript/common.js > './.eslintrc.js_fullsettings.js'",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -49,7 +50,12 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "typescript": "^5.1.6"
+  },
+  "overrides": {
+    "semver": "^7.5.3"
   }
 }
