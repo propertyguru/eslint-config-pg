@@ -1,0 +1,44 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      desc:
+        description: 'Description'
+        required: false
+        default: 'Manual release'
+      branch:
+        description: 'Define branch name'
+        required: true
+        default: 'main'
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set Environment Variables
+        uses: ./.github/actions/setvars
+        with:
+          varFilePath: ./.github/variables/node.env
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install --save=false --package-lock=false semantic-release @commitlint/config-conventional @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/commit-analyzer @semantic-release/npm @semantic-release/exec
+      - name: Run semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: npx semantic-release --branches ${{ github.event.inputs.branch }}
+        id: ver
+    outputs:
+      version: ${{ steps.ver.outputs.nextVer }}

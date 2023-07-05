@@ -1,1 +1,11 @@
+# Disable another package lock files.
+yarn.lock
+pnpm-lock.yaml
+
+# Disable common files / folders
 node_modules
+.eslintrc.js_fullsettings.js
+propertyguru-eslint-config-pg-*
+
+.vscode
+.DS_Store

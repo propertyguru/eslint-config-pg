@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx lint-staged
+
+if git diff --cached --name-only | grep -q configs; then
+  npm run lint
+fi
