@@ -6,6 +6,9 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      packages: write # to be able to publish a NPM package
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -27,7 +30,7 @@ jobs:
       - name: Run semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          NPM_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release --branches master
         id: ver
     outputs:
