@@ -1,24 +1,11 @@
 name: Release
 on:
-  workflow_dispatch:
-    inputs:
-      desc:
-        description: 'Description'
-        required: false
-        default: 'Manual release'
-      branch:
-        description: 'Define branch name'
-        required: true
-        default: 'master'
+  - workflow_dispatch
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      packages: write # to be able to publish a NPM package
-      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -39,9 +26,9 @@ jobs:
         run: npm install --save=false --package-lock=false semantic-release @commitlint/config-conventional @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/commit-analyzer @semantic-release/npm @semantic-release/exec
       - name: Run semantic release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --branches ${{ github.event.inputs.branch }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.GH_PAT }}
+        run: npx semantic-release --branches master
         id: ver
     outputs:
       version: ${{ steps.ver.outputs.nextVer }}
