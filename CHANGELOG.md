@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/propertyguru/eslint-config-pg/compare/v1.1.0...v1.1.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* Apply github token for package release ([a69a1de](https://github.com/propertyguru/eslint-config-pg/commit/a69a1de50af66f045429cf517ddf1c857f8115f8))
+
 # [1.1.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.0.3...v1.1.0) (2023-07-05)
 
 
