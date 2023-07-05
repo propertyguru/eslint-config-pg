@@ -69,7 +69,7 @@
   },
   "release": {
     "branches": [
-      "main"
+      "master"
     ],
     "plugins": [
       "@semantic-release/release-notes-generator",
@@ -85,7 +85,8 @@
         {
           "assets": [
             "CHANGELOG.md",
-            "package.json"
+            "package.json",
+            ".eslintrc.cjs"
           ]
         }
       ],
