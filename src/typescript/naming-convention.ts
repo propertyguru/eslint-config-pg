@@ -12,3 +12,10 @@ function dummy() {
   // eslint-disable-next-line no-console
   console.log(1)
 }
+
+enum Region {
+  SG = 'sg',
+  MY = 'my',
+  ID = 'id',
+  TH = 'th',
+}
