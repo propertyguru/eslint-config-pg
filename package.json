@@ -103,6 +103,10 @@
           "preset": "conventionalcommits",
           "releaseRules": [
             {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
               "scope": "no-release",
               "release": "patch"
             }
