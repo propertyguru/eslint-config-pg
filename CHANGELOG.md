@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/propertyguru/eslint-config-pg/compare/v1.1.1...v1.1.2) (2023-07-17)
+
+
+### Bug Fixes
+
+* release package with chore commit ([#13](https://github.com/propertyguru/eslint-config-pg/issues/13)) ([d8a6b2b](https://github.com/propertyguru/eslint-config-pg/commit/d8a6b2b0ac690c36f97404697d0119b840e3400a))
+
 ## [1.1.1](https://github.com/propertyguru/eslint-config-pg/compare/v1.1.0...v1.1.1) (2023-07-05)
 
 
