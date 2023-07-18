@@ -19,3 +19,10 @@ enum Region {
   ID = 'id',
   TH = 'th',
 }
+
+enum COUNTRY {
+  SG = 'sg',
+  MY = 'my',
+  ID = 'id',
+  TH = 'th',
+}

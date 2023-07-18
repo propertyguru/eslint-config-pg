@@ -116,6 +116,10 @@ module.exports = {
             selector: 'function',
             format: ['camelCase', 'PascalCase'],
           },
+          {
+            selector: 'enum',
+            format: ['PascalCase', 'UPPER_CASE'],
+          },
           // PascalCase for classes, and we are assuming this rule would similarly apply to anything "type like", including interfaces, type aliases, and enums
           {
             selector: 'typeLike',
