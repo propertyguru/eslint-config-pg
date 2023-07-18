@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.1.2...v1.2.0) (2023-07-18)
+
+
+### Features
+
+* Make enum can be UPPER_CASE ([#14](https://github.com/propertyguru/eslint-config-pg/issues/14)) ([7a485b6](https://github.com/propertyguru/eslint-config-pg/commit/7a485b6a95457c2613be74fbc32ee8c76896f1ed))
+
 ## [1.1.2](https://github.com/propertyguru/eslint-config-pg/compare/v1.1.1...v1.1.2) (2023-07-17)
 
 
