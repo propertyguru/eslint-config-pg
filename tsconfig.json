@@ -15,7 +15,7 @@
     // Make type as `any` throw error when transpile code.
     "noImplicitAny": true,
     "noEmit": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": "./src"
   }
 }

@@ -145,6 +145,8 @@ module.exports = {
         'plugin:react/recommended',
         // Ref: https://www.npmjs.com/package/eslint-plugin-react-hooks
         'plugin:react-hooks/recommended',
+        // Ref: https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports
+        'plugin:react/jsx-runtime',
       ],
       settings: {
         react: {
