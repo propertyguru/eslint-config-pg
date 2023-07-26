@@ -81,7 +81,7 @@ module.exports = {
           },
         },
       },
-      plugins: ['@typescript-eslint', 'import'],
+      plugins: ['@typescript-eslint', 'import', 'no-relative-import-paths'],
       extends: [
         'plugin:import/recommended',
         'plugin:import/typescript',
@@ -125,6 +125,11 @@ module.exports = {
             selector: 'typeLike',
             format: ['PascalCase'],
           },
+        ],
+
+        'no-relative-import-paths/no-relative-import-paths': [
+          'error',
+          { allowSameFolder: true, rootDir: 'src', prefix: '@' },
         ],
       },
     },

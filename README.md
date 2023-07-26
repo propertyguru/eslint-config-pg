@@ -1,6 +1,6 @@
 # ESLint and Prettier config
 
-Recommended ESLint and Prettier for typescript and React.js codebase project in PropertyGuru.
+Recommended ESLint and Prettier for TypeScript and React.js codebase project in PropertyGuru. Actually it can works for JavaScript as well but I recommend to use TypeScript for newer project.
 
 **Table of Contents**
 
@@ -19,7 +19,7 @@ Recommended ESLint and Prettier for typescript and React.js codebase project in 
     yarn add --dev @propertyguru/eslint-config-pg husky lint-staged
     ```
 
-    Note: I recommend to use latest version of NPM to make sure peerDependencies will install properly. In Yarn on classic version might have issues so you might need to check on Step 6.
+    Note: I recommend to use latest version of NPM or PNPM to make sure peerDependencies will install properly. In Yarn Classic version doesn't have this feature so you need to check on Step 7.
 
 2. Create or modify `.eslintrc.json` file with following content.
 
@@ -59,7 +59,27 @@ Recommended ESLint and Prettier for typescript and React.js codebase project in 
     - `npm run lint` or `yarn lint` when PR checking process happen or before you commit.
     - `npm run fix` or `yarn fix` on local machine to make sure everythings is clean.
 
-6. If you found you can't run `npm run lint` with error about peerDependencies. Please run `npm info "@propertyguru/eslint-config-pg" peerDependencies` to check requires peerDependencies and add in your project manually.
+6. On your `tsconfig.json` file. Please add these config to make absolute paths with `@/*` as prefix. This is best solution so far and it's default config on Next.js project as well.
+    ```json
+    {
+      "compilerOptions": {
+        // ...
+
+        // You can add this way.
+        "baseUrl": "./src",
+        "paths": {
+          "@/*": ["./*"]
+        }
+
+        // Or this way without baseUrl config.
+        "paths": {
+          "@/*": ["./src/*"]
+        }
+      }
+    }
+    ```
+
+7. If you found you can't run `npm run lint` with error about missing peerDependencies. Please run `npm info "@propertyguru/eslint-config-pg" peerDependencies` to check requires peerDependencies and add in your project manually.
 
 ## Note
 

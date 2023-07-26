@@ -16,6 +16,9 @@
     "noImplicitAny": true,
     "noEmit": false,
     "jsx": "react-jsx",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
   }
 }
