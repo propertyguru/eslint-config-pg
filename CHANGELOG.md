@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.3.0...v1.4.0) (2023-07-26)
+
+
+### Features
+
+* Add no-relative-imports ([#19](https://github.com/propertyguru/eslint-config-pg/issues/19)) ([206d8ae](https://github.com/propertyguru/eslint-config-pg/commit/206d8ae1c4ec9e404ce54814e185727b890f50d5))
+
 # [1.3.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.2.2...v1.3.0) (2023-07-24)
 
 
