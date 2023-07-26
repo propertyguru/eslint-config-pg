@@ -13,3 +13,7 @@ updates:
       - "nimit-ddprop"
       - "shatshai"
       - "chalat-ddprop"
+    groups:
+       dev-dependencies:
+          patterns:
+            - "*"
