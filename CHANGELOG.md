@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/propertyguru/eslint-config-pg/compare/v1.4.0...v1.4.1) (2023-07-27)
+
+
+### Bug Fixes
+
+* missing peer dependencies ([#21](https://github.com/propertyguru/eslint-config-pg/issues/21)) ([c231852](https://github.com/propertyguru/eslint-config-pg/commit/c2318529efcf04b84908191713ce348577809a13))
+
 # [1.4.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.3.0...v1.4.0) (2023-07-26)
 
 
