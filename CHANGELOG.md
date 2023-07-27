@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.4.1...v1.5.0) (2023-07-27)
+
+
+### Features
+
+* Add import sort rule ([#22](https://github.com/propertyguru/eslint-config-pg/issues/22)) ([5b4f7bd](https://github.com/propertyguru/eslint-config-pg/commit/5b4f7bdf7d06e9de0dcec5270d768908c3344ae4))
+
 ## [1.4.1](https://github.com/propertyguru/eslint-config-pg/compare/v1.4.0...v1.4.1) (2023-07-27)
 
 
