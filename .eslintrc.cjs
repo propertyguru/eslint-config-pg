@@ -102,6 +102,10 @@ module.exports = {
         '@typescript-eslint/consistent-type-imports': 'error',
         'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
         'import/no-duplicates': ['error', { 'prefer-inline': true }],
+        'import/order': [
+          'error',
+          { groups: [['builtin', 'external', 'internal']] },
+        ],
 
         // The `@typescript-eslint/naming-convention` rule allows `leadingUnderscore` and `trailingUnderscore` settings. However, the existing `no-underscore-dangle` rule already takes care of this.
         '@typescript-eslint/naming-convention': [
