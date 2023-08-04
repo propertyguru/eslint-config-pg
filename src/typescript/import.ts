@@ -1,5 +1,5 @@
-import { getValueAsString } from './libs/example-helper'
 import {
+  getValueAsString,
   type ReturnGetValueAsStringsFn,
   type InputGetValueAsStringsFn,
 } from './libs/example-helper'
