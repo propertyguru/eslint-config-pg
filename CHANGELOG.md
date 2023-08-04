@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.5.0...v1.6.0) (2023-08-04)
+
+
+### Features
+
+* allow unused arguments with underscore ([#24](https://github.com/propertyguru/eslint-config-pg/issues/24)) ([d067d63](https://github.com/propertyguru/eslint-config-pg/commit/d067d63617c36a5a3fd6aac450981a952518054d))
+
 # [1.5.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.4.1...v1.5.0) (2023-07-27)
 
 

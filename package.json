@@ -1,6 +1,6 @@
 {
   "name": "@propertyguru/eslint-config-pg",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "eslint rules for typescript code base",
   "main": "index.js",
   "engines": {
