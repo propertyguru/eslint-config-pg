@@ -35,6 +35,13 @@ module.exports = {
       },
     ],
 
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
+
     // Keep as historical config but it got ignore by Prettier.
     //
     // 'comma-dangle': ['error', 'always-multiline'],
@@ -134,6 +141,14 @@ module.exports = {
         'no-relative-import-paths/no-relative-import-paths': [
           'error',
           { allowSameFolder: true, rootDir: 'src', prefix: '@' },
+        ],
+
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            argsIgnorePattern: '^_',
+          },
         ],
       },
     },
