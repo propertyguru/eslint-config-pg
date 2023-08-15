@@ -143,7 +143,6 @@ module.exports = {
           { allowSameFolder: true, rootDir: 'src', prefix: '@' },
         ],
 
-        'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': [
           'error',
           {

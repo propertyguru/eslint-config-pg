@@ -15,11 +15,19 @@ Recommended ESLint and Prettier for TypeScript and React.js codebase project in 
 
     ```bash
     npm install -D @propertyguru/eslint-config-pg husky lint-staged
-    # Or
+
+    # PNPM
+    pnpm add -D @propertyguru/eslint-config-pg husky lint-staged
+
+    # Yarn classic or Yarn 1.x
+    npx install-peerdeps -Y @propertyguru/eslint-config-pg
+    yarn add --dev @propertyguru/eslint-config-pg husky lint-staged
+
+    # Yarn modern or Yarn 2.x
     yarn add --dev @propertyguru/eslint-config-pg husky lint-staged
     ```
 
-    Note: I recommend to use latest version of NPM or PNPM to make sure peerDependencies will install properly. In Yarn Classic version doesn't have this feature so you need to check on Step 7.
+    Note: I recommend to use latest version of NPM or PNPM or Yarn 2 to make sure peerDependencies will install properly. In Yarn Classic version doesn't have this feature that why we need to run `npx install-peerdeps` as above.
 
 2. Create or modify `.eslintrc.json` file with following content.
 
@@ -79,13 +87,12 @@ Recommended ESLint and Prettier for TypeScript and React.js codebase project in 
     }
     ```
 
-7. If you found you can't run `npm run lint` with error about missing peerDependencies. Please run `npm info "@propertyguru/eslint-config-pg" peerDependencies` to check requires peerDependencies and add in your project manually.
-
 ## Note
 
 1. You can test eslint configs in this repo by running `npm run print:eslint:config` to see full config from ESLint.
 2. For previous users. You still can access previous major version from [here](https://github.com/propertyguru/eslint-config-pg/tree/v1.0.3).
 3. Please don't add another packages that have Eslint style only like Airbnb. We try to reduce dependency as much as we can.
+4. If you still found you can't run `npm run lint` with error about missing packages from peerDependencies. Please run `npm info "@propertyguru/eslint-config-pg" peerDependencies` to check requires peerDependencies and add in your project manually.
 
 # Documents
 
