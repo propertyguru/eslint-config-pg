@@ -1,3 +1,5 @@
+## [1.6.2](https://github.com/propertyguru/eslint-config-pg/compare/v1.6.1...v1.6.2) (2023-10-23)
+
 ## [1.6.1](https://github.com/propertyguru/eslint-config-pg/compare/v1.6.0...v1.6.1) (2023-08-15)
 
 # [1.6.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.5.0...v1.6.0) (2023-08-04)
