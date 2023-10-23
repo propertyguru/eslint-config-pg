@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: PR Build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     steps:
       - name: Downloading repo
         uses: actions/checkout@v3

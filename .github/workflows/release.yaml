@@ -4,7 +4,7 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     timeout-minutes: 30
     permissions:
       packages: write # to be able to publish a NPM package
