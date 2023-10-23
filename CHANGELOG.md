@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/propertyguru/eslint-config-pg/compare/v1.6.2...v1.7.0) (2023-10-23)
+
+
+### Features
+
+* add script to sync peer dependencies ([#49](https://github.com/propertyguru/eslint-config-pg/issues/49)) ([a1b7e4e](https://github.com/propertyguru/eslint-config-pg/commit/a1b7e4e3182c8d1fada3153bbdfaa59f160bc69b))
+* sync peer deps - fix ([#50](https://github.com/propertyguru/eslint-config-pg/issues/50)) ([c7b1808](https://github.com/propertyguru/eslint-config-pg/commit/c7b1808decf4d0188d98454effede698de1664a4))
+
 ## [1.6.2](https://github.com/propertyguru/eslint-config-pg/compare/v1.6.1...v1.6.2) (2023-10-23)
 
 ## [1.6.1](https://github.com/propertyguru/eslint-config-pg/compare/v1.6.0...v1.6.1) (2023-08-15)
