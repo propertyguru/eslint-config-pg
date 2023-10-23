@@ -1,0 +1,28 @@
+name: sync-peer-deps
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Run sync-peer-deps.js
+      shell: bash
+      run: |
+        node scripts/sync-peer-deps.js
+
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: sync peerDependencies"
