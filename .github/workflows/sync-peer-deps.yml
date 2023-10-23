@@ -7,16 +7,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  php-cs-fixer:
+  sync-peer-deps:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
 
     steps:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.head_ref }}
+        token: ${{ secrets.GH_PAT }}
 
     - name: Run sync-peer-deps.js
       shell: bash
