@@ -4,7 +4,7 @@
   "description": "eslint rules for typescript code base",
   "main": "index.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "files": [
     ".eslintrc.cjs",
